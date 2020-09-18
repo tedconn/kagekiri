@@ -302,10 +302,16 @@ function getElementsByClassName (classNames, context = document) {
   return getMatchingElementsByClassName(elementIterator, classNamesSplit, context)
 }
 
+function getElementById (id) {
+  const elementIterator = new ElementIterator(document)
+  return getMatchingElementById(elementIterator)
+}
+
 export {
   querySelectorAll,
   querySelector,
   getElementsByTagName,
   getElementsByTagNameNS,
-  getElementsByClassName
+  getElementsByClassName,
+  getElementById
 }
