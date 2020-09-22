@@ -5,7 +5,7 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-/* global Element */
+/* global Element Document */
 
 import 'string.prototype.startswith'
 import 'string.prototype.endswith'
@@ -313,8 +313,11 @@ function getElementsByClassName (classNames, context = document) {
   return getMatchingElementsByClassName(elementIterator, classNamesSplit, context)
 }
 
-function getElementById (id) {
-  const elementIterator = new ElementIterator(document)
+function getElementById (id, context = document) {
+  if (!(context instanceof Document)) {
+    throw new Error()
+  }
+  const elementIterator = new ElementIterator(context)
   return getMatchingElementById(elementIterator, id)
 }
 

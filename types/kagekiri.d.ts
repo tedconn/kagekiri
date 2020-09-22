@@ -8,4 +8,5 @@
 export function querySelector(selector: string, context?: Node): Element | null;
 export function querySelectorAll(selector: string, context?: Node): Element[];
 export function getElementsByClassName(names: string, context?: Node): Element[];
-export function getElementById(id: string): Element | null;
+export function getElementsByTagName(tagName: string, context?: Node): Elements[];
+export function getElementsByTagNameNS(namespaceURI: string, localName: string, context?: Node): Elements[];
